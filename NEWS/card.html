@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Slider</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .slider {
+            display: flex;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            gap: 20px;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .card {
+            flex: 0 0 auto;
+            /* background: #fff; */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+           
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            color: #333;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .slider-arrow:hover {
+            background: #f0f0f0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .slider-arrow.prev {
+            left: 0;
+        }
+
+        .slider-arrow.next {
+            right: 0;
+        }
+
+        .slider-arrow i {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .slider-arrow.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .slider-arrow.disabled:hover {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider-arrow prev">
+            <i class="ri-arrow-left-s-line"></i>
+        </div>
+        <div class="slider">
+            <a href="###"><div class="card"><video src="./assets/video/v360.mp4" width="200px" height="370px" autoplay controls></video></div></a>
+            <a href="###"><div class="card"><video src="./assets/video/v360.mp4" width="200px" height="370px" autoplay controls></video></div></a>
+            <a href="###"><div class="card"><video src="./assets/video/v360.mp4" width="200px" height="370px" autoplay controls></video></div></a>
+            <a href="###"><div class="card"><video src="./assets/video/v360.mp4" width="200px" height="370px" autoplay controls></video></div></a>
+            <a href="###"><div class="card"><video src="./assets/video/v360.mp4" width="200px" height="370px" autoplay controls></video></div></a>
+            <a href="###"><div class="card"><video src="./assets/video/v360.mp4" width="200px" height="370px" autoplay controls></video></div></a>
+            <a href="###"><div class="card"><video src="./assets/video/v360.mp4" width="200px" height="370px" autoplay controls></video></div></a>
+            <a href="###"><div class="card"><video src="./assets/video/v360.mp4" width="200px" height="370px" autoplay controls></video></div></a>
+            <a href="###"><div class="card"><video src="./assets/video/v360.mp4" width="200px" height="370px" autoplay controls></video></div></a>
+            <a href="###"><div class="card"><video src="./assets/video/v360.mp4" width="200px" height="370px" autoplay controls></video></div></a>
+          
+        </div>
+        <div class="slider-arrow next">
+            <i class="ri-arrow-right-s-line"></i>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('.slider');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+            const cardWidth = 320; // card width + gap
+            let currentPosition = 0;
+            const maxPosition = slider.scrollWidth - slider.clientWidth;
+
+            function updateArrowStates() {
+                prevBtn.classList.toggle('disabled', currentPosition <= 0);
+                nextBtn.classList.toggle('disabled', currentPosition >= maxPosition);
+            }
+
+            function slide(direction) {
+                const moveAmount = direction === 'next' ? cardWidth : -cardWidth;
+                currentPosition = Math.max(0, Math.min(currentPosition + moveAmount, maxPosition));
+                slider.scrollTo({
+                    left: currentPosition,
+                    behavior: 'smooth'
+                });
+                updateArrowStates();
+            }
+
+            prevBtn.addEventListener('click', () => {
+                if (currentPosition > 0) {
+                    slide('prev');
+                }
+            });
+
+            nextBtn.addEventListener('click', () => {
+                if (currentPosition < maxPosition) {
+                    slide('next');
+                }
+            });
+
+            // Initialize arrow states
+            updateArrowStates();
+
+            // Update arrow states on window resize
+            window.addEventListener('resize', updateArrowStates);
+        });
+    </script>
+</body>
+</html>

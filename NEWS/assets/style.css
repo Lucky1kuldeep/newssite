@@ -61,7 +61,10 @@ body {
   line-height: 1.5;
   transition: backgroud 0.2s ease-in-out;
 }
-
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
 nav {
   position: fixed;
   top: 0;
@@ -747,3 +750,91 @@ nav .navbar ul li i {
   height: 224px;
   margin-right:10px ;
 }
+
+
+/* here starts the css of the right section  */
+
+.border {
+  border: 1px solid var(--section-separator-color);
+
+}
+
+.right-sec {
+  width: 30%;
+  /* padding: 0px; */
+  position: sticky;
+  top: 40px;
+}
+
+.right-section-list {
+  padding: 20px;
+  margin: 0;
+  padding: 12px;
+}
+.right-section-list-item  {
+  width: 100%;
+}
+
+.right-sec-video {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  min-height: 350px;
+}
+
+
+.right-astrobox {
+  margin-top: 20px;
+}
+.astro-topbox {
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.astro-topbox-heading {
+  color: var(--primary-color);
+  font-size: 0.95rem;
+}
+.astro-topbox-dropdown {
+    font-size: 1rem;
+    color: var(--tertiary-color);
+}
+.astro-content-box{
+  padding: 6px 16px;
+  max-height: 200px;
+}
+.astro-content-paragraph {
+    font-size: 0.94rem;
+    font-weight: 400;
+    color: var(--primary-color);
+    line-height: 24px;
+    border-bottom: 8px;
+}
+.astro-content-btn {
+  text-align: right;
+  padding: 10px;
+  color: var(--secondary-common-color) ;
+}
+.astro-content-btn a{
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--secondary-common-color);
+}
+
+.astro-img-sec {
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+} 
+.astro-img  img{
+  height: 52px;
+  width: 52px;
+  border-radius: 50%;
+  background-color: var(--border-color-lite);
+}
+.astro-text {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
