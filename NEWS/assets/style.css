@@ -767,16 +767,17 @@ nav .navbar ul li i {
 }
 
 .right-section-list {
-  padding: 20px;
   margin: 0;
-  padding: 12px;
+  padding: 20px;
+  display: block;
+  position: relative;
+  overflow: hidden;
 }
 .right-section-list-item  {
   width: 100%;
 }
 
 .right-sec-video {
-  display: block;
   object-fit: cover;
   width: 100%;
   min-height: 350px;
@@ -837,4 +838,166 @@ nav .navbar ul li i {
     color: var(--primary-color);
     font-size: 1.2rem;
     font-weight: 400;
+  }
+
+
+  /* here are the sponser lists or advertisement  */
+
+
+  .bottom-links-list {
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    padding-top: 16px;
+  }
+  .bottom-links-span {
+    padding:  0 4px;
+  }
+
+  .bottom-links-list-ul {
+    width: 100%;
+    line-height: 20px;
+    list-style: none;
+  }
+  .bottom-links-list-ul li {
+    display: inline-block  ;
+    white-space: nowrap;
+    flex-direction: column;
+    font-size: 0.9rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-color);
+  }
+  
+  .bottom-links-list-ul li  a {
+    color: var(--section-separator-color);
+  }
+  .bottom-division {
+    padding-top: 20px;
+  }
+
+ .bottom-division ul li{
+    list-style: none;
+    font-weight: bolder;
+  }
+  .bottom-division ul li a {
+
+    text-decoration: none;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    list-style: none;
+    font-size: 0.9rem;
+  }
+
+
+
+
+
+  /* here is the code for the second page */
+
+  .btm-border {
+    border-bottom: 1px solid var(--section-separator-color);
+    padding: 8px 0;
+  }
+
+    
+    .breadcrumb ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .breadcrumb li {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+    }
+    
+    .breadcrumb li:not(:last-child) {
+      margin-right: 8px;
+    }
+    
+    .breadcrumb a {
+      color: #666;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .breadcrumb a:hover {
+      color: wheat;
+    }
+    
+    .breadcrumb span {
+      color: white;
+    }
+    
+    .breadcrumb i {
+      font-size: 16px;
+    }
+
+    .article-box-mid {
+      padding: 20px;
+    }
+
+    .article-box-head  {
+      padding: 16px 0 ;
+    }
+  .article-topic {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+  }
+  .article-subtopic {
+    color: var(--secondary-common-color);
+  }
+
+
+  .article-social-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .article-social {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.86rem;
+    font-weight: var(--font-weight-bold);
+  }
+  .article-state{
+    display: inline-block;
+    color: var(--primary-color);
+  }
+  .article-time{
+    display: inline-block;
+    color: var(--tertiary-color);
+  }
+  .article-share-options {
+    width: 60%;
+    display: flex;
+    gap: 4px;
+    justify-content: flex-end;
+  }
+  .article-image {
+    margin: 10px 0;
+    display: block;
+    width: 100%;
+    border-radius:4px;
+    min-height: 150px;
+    object-fit: contain;
+  }
+  .article-subheading {
+    font-size: 14px;
+    color: var(--text-color);
+    margin: 10px 0;
+    text-align: center;
+  }
+  .article-paragraph {
+    color: var(--primary-color);
+    font-size: 16px;
+    margin: 10px 0;
+    line-height: 30px;
+    font-weight: var(--font-weight-normal);
   }
